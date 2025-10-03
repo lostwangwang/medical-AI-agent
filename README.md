@@ -86,7 +86,7 @@ medical-AI-agent/
 ## 使用方式
 1. 项目中`.env`未配置时，请先配置。
 > [!WARNING]
-> 提交代码时，不要提交改文件!!!
+> 提交代码时，不要提交该文件!!!
 ```shell
 # .env
 QWEN_API_KEY=xxxx
