@@ -1,0 +1,21 @@
+{
+  "test_dataset_path": "data/test_cases.json",
+  "clinical_guidelines_path": "data/clinical_guidelines.json",
+  "output_dir": "experiment_results",
+  "batch_size": 5,
+  "include_agents": [
+    "oncologist",
+    "radiologist",
+    "nurse",
+    "psychologist",
+    "patient_advocate"
+  ],
+  "evaluation_metrics": [
+    "diagnosis_accuracy",
+    "treatment_appropriateness",
+    "consensus_quality"
+  ],
+  "comparison_baselines": [
+    "clinical_guidelines"
+  ]
+}

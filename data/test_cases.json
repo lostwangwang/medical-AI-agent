@@ -1,0 +1,15 @@
+[
+  {
+    "case_id": "case_001",
+    "patient_info": {"age": 45, "gender": "女性"},
+    "symptoms": ["右乳肿块", "轻微疼痛"],
+    "medical_history": ["无家族史"],
+    "test_results": {"CA153": "轻度升高"},
+    "imaging_data": {"钼靶": "4cm不规则肿块"},
+    "ground_truth": {
+      "true_diagnosis": "乳腺癌",
+      "recommended_treatment": ["手术", "化疗"],
+      "expected_concerns": ["转移风险", "预后评估"]
+    }
+  }
+]
