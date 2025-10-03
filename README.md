@@ -84,34 +84,23 @@ medical-AI-agent/
 7. **training/** - 模型训练相关工具
 
 ## 使用方式
+1. 项目中`.env`未配置时，请先配置。
+> [!WARNING]
+> 提交代码时，不要提交改文件!!!
+```shell
+# .env
+QWEN_API_KEY=xxxx
 
-```python
-# 主要使用示例
-from agents.oncologist import OncologistAgent
-from agents.radiologist import RadiologistAgent
-from consensus.decision_engine import DecisionEngine
-from rag.knowledge_base import MedicalKnowledgeBase
+# Neo4j数据库URI (默认: bolt://localhost:7687)
+NEO4J_URI=bolt://localhost:7687
 
-# 初始化系统
-knowledge_base = MedicalKnowledgeBase()
-decision_engine = DecisionEngine()
+# Neo4j用户名 (默认: neo4j)
+NEO4J_USER=neo4j
 
-# 创建智能体
-oncologist = OncologistAgent()
-radiologist = RadiologistAgent()
-
-# 分析病例
-case = MedicalCase(...)
-opinions = [
-    oncologist.analyze_case(case),
-    radiologist.analyze_case(case)
-]
-
-# 生成决策
-decision = decision_engine.make_decision(case, opinions)
-print(decision['decision_summary'])
+# Neo4j密码 (默认: password)
+NEO4J_PASSWORD=your_secure_password_here
 ```
-
+2. neo4j 
 # neo4j
 ## neo4j 登录网址
 http://localhost:7474/browser/
@@ -123,6 +112,7 @@ python main.py --mode demo
 ```
 2. 交互模式:
 ```bash
+# 目前支持命令行交互，可以先使用该模式
 python main.py --mode interactive
 ```
 3. 完整实验:
@@ -133,11 +123,15 @@ python main.py --mode experiment --config experiment_config.json
 ## 后端代码运行
 
 ```shell
+# 保证后端修改代码之后可以热重载
 uvicorn backend.main:app --host localhost --port 8000 --reload
 ```
 
 ## 前端运行
 ```shell
+# 进入前端目录
+
+cd frontend
 # 安装依赖
 npm install
 
